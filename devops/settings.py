@@ -81,6 +81,9 @@ DATABASES = {
     }
 }
 
+SQLAlCHEMY = {
+    'ENGINE' : 'mysql://ManageOS:ManageOS@10.13.89.116:3306/oms?charset=utf8',
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
