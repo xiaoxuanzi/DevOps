@@ -1,0 +1,5 @@
+*.pyc
+.idea/
+all.log
+error.log
+service.sh
