@@ -2,7 +2,7 @@
 from django.shortcuts import render, HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 
-from ..dbtool import Asset
+from devops.util.db import Asset
 
 # @login_required()
 def host_list(request):
