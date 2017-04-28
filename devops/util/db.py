@@ -1,9 +1,9 @@
 import json
 import logging
-import settings as config
+import devops.settings as config
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from models import Host
+from devops.models import Host
 
 logger = logging.getLogger('Allprocess')
 
