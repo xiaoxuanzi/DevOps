@@ -72,3 +72,18 @@ class Asset(object):
             hosts.append(m)
 
         return hosts
+
+    def host_update_status(self, private_ip, status):
+
+        # host = self.session.query(Host).filter_by(private_ip=private_ip).get(1)
+        # host.status = status
+        self.session.query(Host).filter_by(private_ip=private_ip).update({'status' : status})
+        self.session.commit()
+
+
+    def host_query(self, ip):
+
+        host = self.session.query(Host).filter_by(private_ip=ip).one()
+
+        return host
+
