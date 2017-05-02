@@ -43,3 +43,14 @@ def host_delete(request):
 
     return render(request, 'asset/host_list.html', {'hosts' : hosts})
 
+def host_add(request):
+
+    if request.method == 'GET':
+        return render(request, 'asset/host_add.html')
+
+    private_ip = request.POST.get('private_ip')
+    asset = Asset()
+    asset.host_add(private_ip)
+
+    return render(request, 'asset/host_add.html')
+
