@@ -92,3 +92,10 @@ class Asset(object):
 
         host = self.session.query(Host).filter_by(private_ip=ip).delete()
         self.session.commit()
+
+    def host_add(self, ip):
+
+        new_host = Host(private_ip=ip)
+        self.session.add(new_host)
+        self.session.commit()
+
