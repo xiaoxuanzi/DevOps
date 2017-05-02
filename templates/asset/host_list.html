@@ -68,4 +68,17 @@
 
 {% block scripts %}
 
+    <script>
+
+        $(".btn-danger#delete").click(function () {
+            var ip = $(this).closest("tr").find("td:first").text();
+            var flag = confirm("Delete ip : " + ip + "?! Are you sure ?!");
+            if (flag == true ){
+                window.location.href = "/asset/host_delete/?private_ip=" + ip;
+            }
+
+        })
+
+    </script>
+
 {% endblock %}
