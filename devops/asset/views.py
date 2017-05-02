@@ -31,3 +31,15 @@ def host_edit(request):
     host = asset.host_query(private_ip)
 
     return render(request, 'asset/host_edit.html', {'host' : host})
+
+def host_delete(request):
+
+    private_ip = request.GET.get('private_ip')
+
+    asset = Asset()
+    hosts = asset.host_list()
+
+    asset.host_delete(private_ip)
+
+    return render(request, 'asset/host_list.html', {'hosts' : hosts})
+
