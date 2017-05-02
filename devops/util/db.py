@@ -54,6 +54,7 @@ class Machine( object ):
 
         return sum
 
+class AssetError( Exception ): pass
 class Asset(object):
 
     def __init__(self):
@@ -87,3 +88,7 @@ class Asset(object):
 
         return host
 
+    def host_delete(self, ip):
+
+        host = self.session.query(Host).filter_by(private_ip=ip).delete()
+        self.session.commit()
